@@ -1,0 +1,19 @@
+body
+{
+
+  background-color: beige;
+}
+
+.row-3
+{
+  background-color: aquamarine;
+}
+
+.row-4{
+  background-position: 0%;
+
+}
+#courselExample{
+  width: 640px;
+  height: 360px;
+}

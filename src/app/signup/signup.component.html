@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body style="background-image: url(https://producerhive.com/wp-content/uploads/2022/04/Depositphotos_184971892_L-540x540.jpg)">
+<div class="signup-form" id="signupForm">
+  <h1>Create An Account</h1>
+  <div class="social-icons">
+    <a href="#" class="icon"><i class="bx bxl-google-plus"></i></a>
+    <a href="#" class="icon"><i class="bx bxl-facebook"></i></a>
+    <a href="#" class="icon"><i class="bx bxl-github"></i></a>
+    <a href="#" class="icon"><i class="bx bxl-linkedin"></i></a>
+  </div>
+  <div class="form-message-container">
+    <span>Or use your email for registration</span>
+  </div>
+
+  <form [formGroup]="registerForm" (ngSubmit)="registerFn()">
+    <input type="text" placeholder="First Name" formControlName="fname" [ngClass]="{error:getControl('fname')?.errors&& getControl('fname')?.touched}">
+    <div *ngIf="getControl('fname')?.errors && getControl('fname')?.touched">
+      <small class="text-danger" *ngIf="getControl('fname')?.errors?.['required']">First Name is required</small>
+      <small class="text-danger" *ngIf="getControl('fname')?.errors?.['maxlength']">Only 32 character is allowed</small>
+      <small class="text-danger" *ngIf="getControl('fname')?.errors?.['pattern']">Only Alphabets Required</small>
+    </div>
+
+    <input type="text" placeholder="Last Name" formControlName="lname" [ngClass]="{error:getControl('lname')?.errors&& getControl('lname')?.touched}">
+    <div *ngIf="getControl('lname')?.errors && getControl('lname')?.touched">
+      <small class="text-danger" *ngIf="getControl('lname')?.errors?.['required']">Last Name is required</small>
+      <small class="text-danger" *ngIf="getControl('lname')?.errors?.['maxlength']">Only 32 character is allowed</small>
+      <small class="text-danger" *ngIf="getControl('lname')?.errors?.['pattern']">Only Alphabets Required</small>
+    </div>
+
+    <input type="email" placeholder="Email" formControlName="email" [ngClass]="{error:getControl('email')?.errors&& getControl('email')?.touched}">
+    <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+      <small class="text-danger" *ngIf="getControl('email')?.errors?.['required']">Email is required</small>
+      <small class="text-danger" *ngIf="getControl('email')?.errors?.['maxlength']">Only 32 character is allowed</small>
+      <small class="text-danger" *ngIf="getControl('email')?.errors?.['pattern']">Please enter a valid email</small>
+    </div>
+
+    <input type="text" placeholder="Phone Number" formControlName="mobile" [ngClass]="{error:getControl('mobile')?.errors&& getControl('mobile')?.touched}">
+    <div *ngIf="getControl('mobile')?.errors && getControl('mobile')?.touched">
+      <small class="text-danger" *ngIf="getControl('mobile')?.errors?.['required']">Phone Number is required</small>
+      <small class="text-danger" *ngIf="getControl('mobile')?.errors?.['maxlength'] || getControl('mobile')?.errors?.['minlength'] || getControl('mobile')?.errors?.['pattern']">Please enter a valid Mobile number of 10 digit only</small>
+    </div>
+
+    <input type="password" placeholder="Password" formControlName="password" [ngClass]="{error:getControl('password')?.errors&& getControl('password')?.touched}">
+    <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
+      <small class="text-danger" *ngIf="getControl('password')?.errors?.['required']">Password is required</small>
+      <small class="text-danger" *ngIf="getControl('password')?.errors?.['maxlength'] || getControl('password')?.errors?.['minlength'] || getControl('mobile')?.errors?.['pattern']">Password should be of minimum length of 8 character</small>
+      <small class="text-danger" *ngIf="getControl('password')?.errors?.['pattern']">Please enter a valid of Capital letter, Small letter & Special Character</small>
+    </div>
+
+    <input type="password" placeholder="Confirm Password" formControlName="confirm_password" [ngClass]="{error:getControl('confirm_password')?.errors&& getControl('confirm_password')?.touched}">
+    <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
+      <small class="text-danger" *ngIf="getControl('password')?.errors?.['required']">Password is required</small>
+      <small class="text-danger" *ngIf="getControl('password')?.errors?.['maxlength'] || getControl('password')?.errors?.['minlength'] || getControl('mobile')?.errors?.['pattern']">Password should be of minimum length of 8 character</small>
+      <small class="text-danger" *ngIf="getControl('password')?.errors?.['pattern']">Please enter a valid of Capital letter, Small letter & Special Character</small>
+    </div>
+
+    <button type="Submit" value="submit">Sign Up</button>
+  </form>
+  <p style="color: aliceblue;">Already have an account? <a href="#" id="showLogin">Sign In</a></p>
+</div>
+</body>
+
