@@ -1,0 +1,30 @@
+ body
+{
+  background-color:darkkhaki;
+  font-size: medium;
+
+}
+.h1{
+  background-color: azure;
+}
+
+/* div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+} */
+div img{
+  width: 400px;
+  height: 300px;
+  border: 2px solid #ff3dff;
+  box-shadow:4px 7px 7px 0px #00000042 ;
+  cursor:center;
+  margin: 10px;
+  transition: 400ms;
+}
+div img:hover{
+  filter: grayscale(1);
+  transform: scale(1.03);
+}
+
